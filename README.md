@@ -1,3 +1,1 @@
-# Sakura
-
 Work in progress
