@@ -1,9 +1,36 @@
-[gd_scene format=3 uid="uid://c74n0cqiwbc5n"]
+[gd_scene load_steps=4 format=3 uid="uid://c74n0cqiwbc5n"]
 
-[node name="Editor" type="Control"]
-layout_mode = 3
+[ext_resource type="Theme" uid="uid://l77ckodjfb54" path="res://addons/lite/lite.tres" id="1_pwxoi"]
+[ext_resource type="Texture2D" uid="uid://dyym47soi0w1n" path="res://addons/lite/rpgiab/32x32/group_add.png" id="2_hew8t"]
+[ext_resource type="Texture2D" uid="uid://bqhu3nnby028" path="res://addons/lite/rpgiab/32x32/folder_page.png" id="3_e3jq4"]
+
+[node name="Editor" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pwxoi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Toolbar" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Toolbar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/Toolbar/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_hew8t")
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/Toolbar/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_e3jq4")
+flat = true

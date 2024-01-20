@@ -1,5 +1,5 @@
 extends Resource
-class_name SpkgPackage
+class_name Package
 
 enum PackageType {
 	Game,
