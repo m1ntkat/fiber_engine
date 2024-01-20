@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Sakura"
+config/name="FiberEngine"
 config/version="0.1.0"
 run/main_scene="res://editor/editor.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
