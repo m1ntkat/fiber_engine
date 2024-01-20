@@ -1,3 +1,3 @@
 # Sakura
 
-Work in progress game framework
+Work in progress
