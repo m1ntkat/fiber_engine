@@ -1,0 +1,7 @@
+[gd_resource type="SystemFont" load_steps=2 format=3 uid="uid://dca7seoyu4mff"]
+
+[ext_resource type="FontFile" uid="uid://b8cnc178xy5j" path="res://core/assets/fonts/bootstrap-icons.woff2" id="1_yrtjf"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("1_yrtjf")])
+font_names = PackedStringArray("Segoe UI", "Noto Sans", "Tahoma", "Sans-Serif")
