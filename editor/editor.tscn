@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c74n0cqiwbc5n"]
+[gd_scene load_steps=7 format=3 uid="uid://c74n0cqiwbc5n"]
 
-[ext_resource type="Theme" uid="uid://l77ckodjfb54" path="res://addons/lite/lite.tres" id="1_pwxoi"]
-[ext_resource type="Texture2D" uid="uid://dyym47soi0w1n" path="res://addons/lite/rpgiab/32x32/group_add.png" id="2_hew8t"]
-[ext_resource type="Texture2D" uid="uid://bqhu3nnby028" path="res://addons/lite/rpgiab/32x32/folder_page.png" id="3_e3jq4"]
+[ext_resource type="Script" path="res://editor/editor.gd" id="1_j3xwv"]
+[ext_resource type="Texture2D" uid="uid://dyym47soi0w1n" path="res://assets/icons/rpgiab/32x32/group_add.png" id="2_hew8t"]
+[ext_resource type="Texture2D" uid="uid://bqhu3nnby028" path="res://assets/icons/rpgiab/32x32/folder_page.png" id="3_e3jq4"]
+[ext_resource type="Script" path="res://editor/project_browser.gd" id="4_u1sgk"]
+[ext_resource type="Script" path="res://editor/workspace.gd" id="5_d4h1c"]
+[ext_resource type="Script" path="res://editor/tab_container.gd" id="6_gxlnf"]
 
 [node name="Editor" type="PanelContainer"]
 anchors_preset = 15
@@ -10,10 +13,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_pwxoi")
+script = ExtResource("1_j3xwv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="Menubar" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="VBoxContainer/Menubar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="File" type="PopupMenu" parent="VBoxContainer/Menubar/MenuBar"]
+
+[node name="Help" type="PopupMenu" parent="VBoxContainer/Menubar/MenuBar"]
 
 [node name="Toolbar" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
@@ -34,3 +54,41 @@ flat = true
 layout_mode = 2
 icon = ExtResource("3_e3jq4")
 flat = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 250
+
+[node name="ProjectBrowser" type="Control" parent="VBoxContainer/HSplitContainer"]
+layout_mode = 2
+script = ExtResource("4_u1sgk")
+
+[node name="Tree" type="Tree" parent="VBoxContainer/HSplitContainer/ProjectBrowser"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Workspace" type="Control" parent="VBoxContainer/HSplitContainer"]
+layout_mode = 2
+script = ExtResource("5_d4h1c")
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/HSplitContainer/Workspace"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_gxlnf")
+
+[node name="Control" type="Control" parent="VBoxContainer/HSplitContainer/Workspace/TabContainer"]
+layout_mode = 2
+
+[node name="Statusbar" type="Control" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
