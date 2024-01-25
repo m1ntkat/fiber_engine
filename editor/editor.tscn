@@ -96,7 +96,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
 [node name="NewProjectFileDialog" type="FileDialog" parent="."]
-title = "Open a Directory"
+title = "Create a new project"
 ok_button_text = "Select Current Folder"
 file_mode = 2
 access = 2

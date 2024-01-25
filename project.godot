@@ -18,7 +18,7 @@ config/icon="res://assets/icons/icon_512.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/native_dialogs/plugin.cfg", "res://addons/qodot/plugin.cfg")
+enabled=PackedStringArray("res://addons/qodot/plugin.cfg")
 
 [rendering]
 

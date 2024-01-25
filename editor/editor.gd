@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_new_project_button_pressed():
-	pass # Replace with function body.
+func _on_project_button_pressed():
+	$NewProjectFileDialog.popup_centered()
